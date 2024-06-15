@@ -24,7 +24,10 @@ table(rowSums(data$y)) #number of inds captures X times
 str(data$scores) #upper triangle matrix of scores
 data$scores[1,] #scores for sample 1, self reference is NA
 
-#the only data are the pairwise sample scores
+#the only data are the pairwise sample scores, the trap of each sample, and the occasion of each sample
+str(data$scores) #n.samples x n.samples scores
+str(data$this.j) #n.samples length vector of trap IDs
+str(data$this.k) #n.samples length vector of occasion IDs
 
 #visualize observed match scores
 library(vioplot)

@@ -1,5 +1,6 @@
 #This script considers categorical match scores and multiple classifiers (ML/AI/humans/etc.)
 source("sim.pairwise.multiCat.R")
+library(nimble) #need nimble for data simulator, loading here
 
 #make state space first to get area
 buff <- 3 #state space buffer. Should be at least 3 sigma.
@@ -34,6 +35,11 @@ data$n #number of inds captured
 table(rowSums(data$y)) #number of inds captures X times
 str(data$scores) #upper triangle matrix of scores
 data$scores[,1,] #scores for sample 1 over classifiers and samples.
+
+#the only data are the pairwise sample scores, the trap of each sample, and the occasion of each sample
+str(data$scores) #n.classifier x n.samples x n.samples scores
+str(data$this.j) #n.samples length vector of trap IDs
+str(data$this.k) #n.samples length vector of occasion IDs
 
 #summarize match scores
 #just looking at 1st classifier here
