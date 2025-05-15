@@ -9,6 +9,8 @@ Minimal information for now, but there are two models here that are latent ID SC
 
 These models will be sensitive to correctly specifying the match score distributions, which will not be something nice like a Poisson for SURF/SIFT-type data or most data sources, probably. Those could be converted to categorical scores, possibly. Also, known-ID validation data with pairwise scores could be useful in determining the most appropriate score distribution. This is uncharted territory.
 
+These models use count prior data augmentation: https://github.com/benaug/SCR-Count-Prior-Data-Augmentation
+
 Finally, I will direct everyone to Amanda Ellis's PhD dissertation on this topic in a nonspatial context. See here:
 
 https://uknowledge.uky.edu/statistics_etds/31/
